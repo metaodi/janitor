@@ -27,4 +27,4 @@ gulp.task('test', function(cb) {
 });
 
 gulp.task('default', [ 'lint' ]);
-gulp.task('travis', [ 'lint', 'test' ]);
+gulp.task('travis', [ 'lint' ]);

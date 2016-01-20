@@ -42,7 +42,7 @@ controller.hears(['shutdown'],'direct_message,direct_mention,mention', function(
 
 controller.hears(['next collections'],'direct_message,direct_mention,mention',function(bot, message) {
     // today in YYYY-MM-DD format
-    today = new Date().toJSON().slice(0, 10);
+    var today = new Date().toJSON().slice(0, 10);
     Request
     .get('http://openerz.herokuapp.com/api/calendar?start=' + today + '&sort=date:asc&limit=3')
     .end(function(err, res){
