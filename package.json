@@ -1,0 +1,29 @@
+{
+  "name": "janitor",
+  "version": "1.0.0",
+  "description": "A friendly slack bot for the maintainance of your building",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metaodi/janitor"
+  },
+  "keywords": [
+    "slack",
+    "bot",
+    "janitor",
+    "building",
+    "maintainance"
+  ],
+  "author": "Stefan Oderbolz <odi@readmore.ch> (http://metaodi.ch/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/metaodi/janitor/issues"
+  },
+  "homepage": "https://github.com/metaodi/janitor",
+  "dependencies": {
+    "botkit": "0.0.5"
+  }
+}
