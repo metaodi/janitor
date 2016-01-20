@@ -2,7 +2,7 @@
   "name": "janitor",
   "version": "1.0.0",
   "description": "A friendly slack bot for the maintainance of your building",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,17 @@
   },
   "homepage": "https://github.com/metaodi/janitor",
   "dependencies": {
-    "botkit": "0.0.5"
+    "botkit": "0.0.5",
+    "superagent": "^1.7.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-util": "^3.0.1",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "~2.3.4",
+    "should": "~8.1.1"
   }
 }
