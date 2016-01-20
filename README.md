@@ -1,7 +1,7 @@
 janitor
 =======
 
-A friendly slack bot for the maintainance of your building.
+A friendly slack bot for the maintenance of your building.
 
 This bot was built with the Liip Zurich office in mind, but maybe it can help you, too.
 

@@ -1,7 +1,7 @@
 {
   "name": "janitor",
   "version": "1.0.0",
-  "description": "A friendly slack bot for the maintainance of your building",
+  "description": "A friendly slack bot for the maintenance of your building",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
