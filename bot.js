@@ -6,7 +6,7 @@ var Botkit = require('botkit');
 var controller = Botkit.slackbot();
 
 var janitor = controller.spawn({
-  token: 'xoxb-19008297365-lx82oiralYoUfIVVo4XmYVlk' //process.env.token
+  token: process.env.token
 });
 janitor.startRTM(function(err,bot,payload) {
   if (err) {
