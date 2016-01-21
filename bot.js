@@ -19,13 +19,13 @@ controller.hears(
 );
 
 controller.hears(
-    ['next( collection)?'],
+    ['next'],
     'direct_message,direct_mention,mention',
     answers.nextCollection
 );
 
 controller.hears(
-    ['(collection )?today'],
+    ['today'],
     'direct_message,direct_mention,mention',
     answers.todayCollection
 );
