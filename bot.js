@@ -13,7 +13,7 @@ janitor.startRTM(function(err,bot,payload) {
 
 
 controller.hears(
-    ['shutdown', 'get lost', 'self.*destruct', 'destroy'],
+    ['shutdown', 'get lost', 'self.*destruct', 'destroy', 'shut.*up', 'go away'],
     'direct_message,direct_mention,mention', 
     answers.shutdown
 );
@@ -31,7 +31,13 @@ controller.hears(
 );
 
 controller.hears(
-    ['uptime','identify yourself','who are you','what is your name'],
+    ['hi', 'hello', 'hey'],
+    'direct_message,direct_mention,mention',
+    answers.hello
+);
+
+controller.hears(
+    ['uptime', 'identify yourself', 'who are you', 'what is your name', 'what do you do', 'can you help me'],
     'direct_message,direct_mention,mention',
     answers.uptime
 );
