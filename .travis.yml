@@ -1,12 +1,12 @@
 language: node_js
-    
 node_js:
-- '4.0.0'
-
+- 4.0.0
 before_script:
 - npm install -g gulp
-
 script:
 - gulp travis
-
 sudo: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: kiz5cMuQaOEzgZKO4FqNvFsefpo177jft+xeJPmn1hI3YHKLlbnDU29//pbCKe4A4W99kBxEmCBDhvAhRElrVSkGNZqrvS8aq7dGskMomvHdIFxf/4uTjSkJPhwLIAzAit/ewV50ToDecF/S2u7kGZJN/IzlzlIxApz1WAPKr7vhuThPVqKx8DYypz0sttg7J7ngcMI5RsQeiAWnO34rU2o8JbAJSKKOZ904e1FeERd6KOsMUKhcffBwkwpnusvRIKF76URe+znlLcRUvDD55LP5mt9qXKDleK7E32+6JK1SWqsbRjaWmPkjX5Ssvg4yDTgsFFPgLZNU9blh8SUZU0InD7pGRkpsx9T/9ko//RTcVXxFgF1zru8Q9UrOyhBFNgp9YWr/9j3S9IiYgmaYPSSvycxmEo8/P4/YoRQerrDTeSBZvastw1t+xO6tlhegJbIsR5I2as8mzd/3X7hJ/qvnPxO1Gbo47pPHjaOCG1pzlmPN+XFDYb2nt50Mkx3DyQUljrWc/djir5qT2CsQbUGgmX/5VKJsEuwgarVJlfzRTJmN76i+0oVq0UmHLfl8AZs2NTNPfwoWSxpTolgu72JymdRZVZIA3BC6TEzil2VSD4ARSyUTX3afnaWzapTtufD8qV04hpx4Qx31Lz+ubcspGKBUYM8JWbB080XaJoQ=
