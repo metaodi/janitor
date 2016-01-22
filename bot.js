@@ -1,3 +1,4 @@
+var http = require('http');
 var Botkit = require('botkit');
 var controller = Botkit.slackbot();
 var answers = require('./lib/answers');
@@ -41,3 +42,9 @@ controller.hears(
     'direct_message,direct_mention,mention',
     answers.uptime
 );
+
+// To keep Heroku's free dyno awake
+http.createServer(function(request, response) {
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.end('Ok, dyno is awake.');
+}).listen(process.env.PORT || 5000);
