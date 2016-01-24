@@ -9,7 +9,8 @@ This bot was built with the Liip Zurich office in mind, but maybe it can help yo
 
 ## Features
 
-* Displays the waste collection data of the City of Zurich
+* Query the [waste collection data of the City of Zurich](http://openerz.herokuapp.com)
+* Query the [Swiss public transport API](http://transport.opendata.ch/)
 
 ## Ideas
 
