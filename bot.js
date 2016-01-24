@@ -20,7 +20,7 @@ controller.hears(
 );
 
 controller.hears(
-    ['next'],
+    ['next.*coll'],
     'direct_message,direct_mention,mention',
     answers.nextCollection
 );
@@ -29,6 +29,18 @@ controller.hears(
     ['today'],
     'direct_message,direct_mention,mention',
     answers.todayCollection
+);
+
+controller.hears(
+    ['board'],
+    'direct_message,direct_mention,mention',
+    answers.stationBoard
+);
+
+controller.hears(
+    ['next.*conn'],
+    'direct_message,direct_mention,mention',
+    answers.nextConnection
 );
 
 controller.hears(
