@@ -44,6 +44,12 @@ controller.hears(
 );
 
 controller.hears(
+    ['calendar'],
+    'direct_message,direct_mention,mention',
+    answers.nextCalendarEntries
+);
+
+controller.hears(
     ['hi', 'hello', 'hey'],
     'direct_message,direct_mention,mention',
     answers.hello
