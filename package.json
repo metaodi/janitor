@@ -28,6 +28,7 @@
     "google-auth-library": "^0.9.7",
     "googleapis": "^2.1.7",
     "moment": "^2.11.1",
+    "moment-timezone": "^0.5.0",
     "superagent": "^1.7.0",
     "underscore": "^1.8.3"
   },
