@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/metaodi/janitor",
   "dependencies": {
+    "async": "^1.5.2",
     "botkit": "0.0.5",
     "google-auth-library": "^0.9.7",
     "googleapis": "^2.1.7",
