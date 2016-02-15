@@ -1,5 +1,6 @@
 var http = require('http');
 var Botkit = require('botkit');
+var _ = require('underscore');
 var controller = Botkit.slackbot();
 var answers = require('./lib/answers');
 
@@ -12,54 +13,63 @@ janitor.startRTM(function(err,bot,payload) {
   }
 });
 
+function matcher(text) {
+    return function(pattern) {
+        var re = new RegExp(pattern);
+        return re.test(text);
+    };
+}
 
-controller.hears(
-    ['shutdown', 'get lost', 'self.*destruct', 'destroy', 'shut.*up', 'go away'],
-    'direct_message,direct_mention,mention', 
-    answers.shutdown
-);
+var requestConfig = [
+    {
+        'pattern': ['shutdown', 'get lost', 'self.*destruct', 'destroy', 'shut.*up', 'go away'],
+        'answerFn': answers.shutdown
+    },
+    {
+        'pattern': ['next.*coll'],
+        'answerFn': answers.nextCollection
+    },
+    {
+        'pattern': ['today'],
+        'answerFn': answers.todayCollection
+    },
+    {
+        'pattern': ['board'],
+        'answerFn': answers.stationBoard
+    },
+    {
+        'pattern': ['next.*conn'],
+        'answerFn': answers.nextConnection
+    },
+    {
+        'pattern': ['cal(endar)?'],
+        'answerFn': answers.nextCalendarEntries
+    },
+    {
+        'pattern': ['hi', 'hello', 'hey'],
+        'answerFn': answers.hello
+    },
+    {
+        'pattern': ['uptime', 'identify yourself', 'who are you', 'what is your name', 'what do you do', 'can you help me'],
+        'answerFn': answers.uptime
+    },
+];
 
-controller.hears(
-    ['next.*coll'],
-    'direct_message,direct_mention,mention',
-    answers.nextCollection
-);
 
-controller.hears(
-    ['today'],
-    'direct_message,direct_mention,mention',
-    answers.todayCollection
-);
+controller.hears(['.*'], ['direct_message,direct_mention'], function(bot, message) {
+    var noAnswer = _.every(requestConfig, function(request) {
+        var matched = _.any(request.pattern, matcher(message.text));
+        if (matched) {
+            request.answerFn(bot, message);
+            return false; //break out of every()
+        }
+        return true; // continue with next requestConfig
+    });
+    if (noAnswer) {
+        answers.didNotUnderstand(bot, message);
+    }
+});
 
-controller.hears(
-    ['board'],
-    'direct_message,direct_mention,mention',
-    answers.stationBoard
-);
-
-controller.hears(
-    ['next.*conn'],
-    'direct_message,direct_mention,mention',
-    answers.nextConnection
-);
-
-controller.hears(
-    ['calendar'],
-    'direct_message,direct_mention,mention',
-    answers.nextCalendarEntries
-);
-
-controller.hears(
-    ['hi', 'hello', 'hey'],
-    'direct_message,direct_mention,mention',
-    answers.hello
-);
-
-controller.hears(
-    ['uptime', 'identify yourself', 'who are you', 'what is your name', 'what do you do', 'can you help me'],
-    'direct_message,direct_mention,mention',
-    answers.uptime
-);
 
 // To keep Heroku's free dyno awake
 http.createServer(function(request, response) {
