@@ -14,7 +14,6 @@ janitor.startRTM(function(err,bot,payload) {
 });
 
 function matcher(text) {
-    var text = text;
     return function(pattern) {
         var re = new RegExp(pattern);
         return re.test(text);
