@@ -43,7 +43,7 @@ var requestConfig = [
         'answerFn': answers.nextConnection
     },
     {
-        'pattern': ['calendar'],
+        'pattern': ['cal(endar)?'],
         'answerFn': answers.nextCalendarEntries
     },
     {
