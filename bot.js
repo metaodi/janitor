@@ -15,7 +15,7 @@ janitor.startRTM(function(err,bot,payload) {
 
 function matcher(text) {
     return function(pattern) {
-        var re = new RegExp(pattern);
+        var re = new RegExp(pattern, 'i');
         return re.test(text);
     };
 }
