@@ -46,6 +46,10 @@ var requestConfig = [
         'answerFn': answers.nextCalendarEntries
     },
     {
+        'pattern': ['free', 'meeting', 'room'],
+        'answerFn': answers.freeRooms
+    },
+    {
         'pattern': ['hi', 'hello', 'hey'],
         'answerFn': answers.hello
     },
