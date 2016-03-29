@@ -54,8 +54,12 @@ var requestConfig = [
         'answerFn': answers.hello
     },
     {
-        'pattern': ['uptime', 'identify yourself', 'who are you', 'what is your name', 'what do you do', 'can you help me'],
+        'pattern': ['uptime', 'identify yourself', 'who are you', 'what is your name', 'what.*do', 'can you help me'],
         'answerFn': answers.uptime
+    },
+    {
+        'pattern': ['list'],
+        'answerFn': answers.list
     },
 ];
 
