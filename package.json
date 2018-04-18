@@ -1,6 +1,6 @@
 {
   "name": "janitor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A friendly slack bot for the maintenance of your building",
   "main": "bot.js",
   "scripts": {
