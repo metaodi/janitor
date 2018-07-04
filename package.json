@@ -4,7 +4,9 @@
   "description": "A friendly slack bot for the maintenance of your building",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,8 @@
     "moment-timezone": "^0.5.14",
     "superagent": "^3.8.2",
     "underscore": "^1.8.3",
-    "xregexp": "^3.2.0"
+    "xregexp": "^3.2.0",
+    "snyk": "^1.88.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -45,5 +48,6 @@
   },
   "engines": {
     "node": ">=4.8.4"
-  }
+  },
+  "snyk": true
 }
